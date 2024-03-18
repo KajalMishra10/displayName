@@ -13,7 +13,9 @@ export default function App() {
   };
   return (
     <div className="App">
+    <h1>Full Name Display</h1>
       <form onSubmit={handleSubmit}>
+    
         <label>
           First Name:
           <input
