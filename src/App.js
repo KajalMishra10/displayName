@@ -1,49 +1,24 @@
-import "./styles.css";
 import { useState } from "react";
+import "./styles.css";
 
 export default function App() {
-  const [first, setFirst] = useState("");
-  const [last, setLast] = useState("");
-  const [show, setShow] = useState(false);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("hi");
-    //setData();
-    setShow(true);
+  const [value, setValue] = useState(0);
+  const inc = () => {
+    setValue((prev) => prev + 1);
+  };
+  const dec = () => {
+    setValue((prev) => prev - 1);
   };
   return (
-    <div className="App">
-    <h1>Full Name Display</h1>
-      <form onSubmit={handleSubmit}>
-    
-        <label>
-          First Name:
-          <input
-            type="text"
-            required
-            onChange={(e) => setFirst(e.target.value)}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            required
-            onChange={(e) => setLast(e.target.value)}
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      {show ? (
-        <div>
-          Full Name:{" "}
-          <span>
-            {first} {last}
-          </span>
-        </div>
-      ) : (
-    ""
-      )}
+    <div>
+      <h1>Counter App</h1>
+      <p>
+        Count: <span>{value}</span>
+      </p>
+      <div>
+        <button onClick={inc}>Increment</button>
+        <button onClick={dec}>Decrement</button>
+      </div>
     </div>
   );
 }
