@@ -30,7 +30,7 @@ export default function App() {
             onChange={(e) => setLast(e.target.value)}
           />
         </label>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
       {show ? (
         <div>
